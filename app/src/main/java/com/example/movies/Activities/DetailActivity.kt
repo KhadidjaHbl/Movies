@@ -22,6 +22,8 @@ class DetailActivity : AppCompatActivity() {
         val poster = findViewById<ImageView>(R.id.poster_image)
         val release = findViewById<TextView>(R.id.release)
         val overview = findViewById<TextView>(R.id.movervie_tv)
+        val votes=findViewById<TextView>(R.id.movie_votes)
+        val popularity=findViewById<TextView>(R.id.popularity)
 
         val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
 
@@ -30,6 +32,9 @@ class DetailActivity : AppCompatActivity() {
         title.text = movie?.title
         release.text = movie.release
         overview.text = movie?.overview
+        votes.text=movie?.vote_count
+        popularity.text=movie?.popularity
+
 
     }
 

@@ -19,7 +19,7 @@ class MovieAdapter(
 
     class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
-        val movieView = view.findViewById<ConstraintLayout>(R.id.movie_item) as ConstraintLayout
+        //val movieView = view.findViewById<ConstraintLayout>(R.id.movie_item) as ConstraintLayout
         fun bindMovie(movie: Movie, listener: (Movie) -> Unit) {
             itemView.movie_title.text = movie.title
             itemView.movie_release_date.text = movie.release
