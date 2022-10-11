@@ -34,7 +34,7 @@ class DetailActivity : AppCompatActivity() {
         val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
         Glide.with(this).load(IMAGE_BASE + movie!!.poster).into(poster_image)
 
-        title.text = movie?.id
+        title.text = movie?.title
         release.text = movie?.release
         overview.text = movie?.overview
         votes.text=movie?.vote_count
