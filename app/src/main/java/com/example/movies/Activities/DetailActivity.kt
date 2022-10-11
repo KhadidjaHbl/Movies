@@ -7,9 +7,15 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.movies.Models.Movie
 import com.example.movies.R
+import com.example.movies.Services.MovieApiInterface
+import com.example.movies.Services.MovieApiService
 import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.movie_item.*
 import kotlinx.android.synthetic.main.movie_item.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,16 +32,13 @@ class DetailActivity : AppCompatActivity() {
         val popularity=findViewById<TextView>(R.id.popularity)
 
         val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
-
         Glide.with(this).load(IMAGE_BASE + movie!!.poster).into(poster_image)
 
-        title.text = movie?.title
-        release.text = movie.release
+        title.text = movie?.id
+        release.text = movie?.release
         overview.text = movie?.overview
         votes.text=movie?.vote_count
         popularity.text=movie?.popularity
 
-
     }
-
 }
